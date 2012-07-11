@@ -1,6 +1,6 @@
 # Capifaction
 
-TODO: Write a gem description
+Some common Capistrano recipies for Webfaction.
 
 ## Installation
 
@@ -18,12 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+set :application,     "Application name"
 
-## Contributing
+set :repository,      "git@github.com:account/repo.git"
+set :deploy_subdir,   "subdir_on_repo"
+set :scm_username,    "my_username"
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+set :server_url,        "www.myserver.com"
+set :user,              "ssh_username_on_server"
+set :base_deploy_path,  "~/base_path_to_install"
+set :config_path,       "~/additional_config_files_path" # database.yml
+```

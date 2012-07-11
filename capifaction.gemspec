@@ -4,8 +4,8 @@ require File.expand_path('../lib/capifaction/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Juan Hoyos"]
   gem.email         = ["juan.hoyosr@gmail.com"]
-  gem.description   = %q{Some common Capistrano recipies}
-  gem.summary       = %q{Capistrano recipies}
+  gem.description   = %q{Some common Capistrano recipies for Webfaction}
+  gem.summary       = %q{Webfaction Capistrano recipies}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
