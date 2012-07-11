@@ -1,5 +1,1 @@
-require "capifaction/version"
-require "capifaction/subdir"
-
-module Capifaction
-end
+Dir.glob(File.join(File.dirname(__FILE__), '/capifaction/*.rb')).sort.each { |f| load f }

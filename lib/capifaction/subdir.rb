@@ -27,5 +27,5 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   end
 
-  _cset :strategy, RemoteCacheSubdir.new(self)
+  set :strategy, RemoteCacheSubdir.new(self)
 end
