@@ -6,17 +6,22 @@ Some common Capistrano recipies for Webfaction.
 
 Add this line to your application's Gemfile:
 
-    gem 'capifaction'
+    gem 'capifaction', :git => 'git@github.com:VictoryProductions/capifaction.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself manually as:
 
-    $ gem install capifaction
+    $ git clone git@github.com:VictoryProductions/capifaction.git
+    $ cd capifaction
+    $ gem build capifaction.gemspec
+    $ gem install capifaction-0.0.1.gem 
 
 ## Usage
+
+On `config/deploy.rb` include these sample configuration variables:
 
 ```ruby
 set :application,     "Application name"
