@@ -58,7 +58,7 @@ Capistrano::Configuration.instance(:must_exist).load do
     desc "Refresh gems"
     task :refresh_gems, :roles => :app do
       run "gem install bundler"
-      run "cd #{release_path}; bundle install"
+      run "cd #{release_path} && bundle install --without test development --quiet"
     end
 
     desc "Prepare Rails environment"
