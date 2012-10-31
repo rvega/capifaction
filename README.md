@@ -19,6 +19,31 @@ Or install it yourself manually as:
     $ gem build capifaction.gemspec
     $ gem install capifaction-0.0.1.gem 
 
+## Recipies
+
+### Restart/Reload nginx
+`deploy:restart` and `deploy:reload` where prepared for this.
+
+`deploy:restart` is called after `deploy:update`
+
+### Copying database config file
+If `config_path` is present, it will look for `database.yml` and copy it
+to the proper location on the release path.
+
+`deploy:copy_db_config` is run after creating the current symlink of `deploy:update`.
+
+### DB migrations
+Overrides the default Capistrano version, adapted to the webfaction environment.
+
+`deploy:migrate` is run after a full `deploy`.
+
+### Bundle install
+`deploy:refresh_gems` updates the gems of the release path by doing a
+`bundle install` on the Rails production environment.
+
+Run after creating the current symlink of `deploy:update`.
+
+
 ## Usage
 
 On `config/deploy.rb` include these sample configuration variables:
@@ -35,3 +60,9 @@ set :user,              "ssh_username_on_server"
 set :base_deploy_path,  "~/base_path_to_install"
 set :config_path,       "~/additional_config_files_path" # database.yml
 ```
+
+## References
+
+* [Capistrano Tasks](https://github.com/capistrano/capistrano/wiki/Capistrano-Tasks)
+* [Configuration Variables](https://github.com/capistrano/capistrano/wiki/2.x-Significant-Configuration-Variables)
+* [Capistrano Variables](http://theadmin.org/articles/capistrano-variables/)
