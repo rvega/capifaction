@@ -55,6 +55,11 @@ Capistrano::Configuration.instance(:must_exist).load do
       run "cp #{config_path}/database.yml #{release_path}/config" unless config_path.empty?
     end
 
+    desc "Run db migrations"
+    task :migrate do
+      run "cd #{current_path} && bundle exec rake RAILS_ENV=production db:migrate"
+    end
+
     desc "Refresh gems"
     task :refresh_gems, :roles => :app do
       run "gem install bundler"
