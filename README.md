@@ -37,6 +37,9 @@ Overrides the default Capistrano version, adapted to the webfaction environment.
 
 `deploy:migrate` is run after a full `deploy`.
 
+### Seeds
+Doing `deploy:seed` will execute `rake db:seed`.
+
 ### Bundle install
 `deploy:refresh_gems` updates the gems of the release path by doing a
 `bundle install` on the Rails production environment.

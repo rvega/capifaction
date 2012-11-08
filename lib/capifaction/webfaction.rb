@@ -57,7 +57,12 @@ Capistrano::Configuration.instance(:must_exist).load do
 
     desc "Run db migrations"
     task :migrate do
-      run "cd #{current_path} && bundle exec rake RAILS_ENV=production db:migrate"
+      run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
+    end
+
+    desc "Load the db with seeds data"
+    task :seed do
+      run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=production"
     end
 
     desc "Refresh gems"
